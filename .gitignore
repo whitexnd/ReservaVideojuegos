@@ -1,0 +1,10 @@
+.idea/
+*.iml
+target/
+*.class
+*.jar
+*.war
+*.log
+reserva_videojuegos.db
+.DS_Store
+Thumbs.db

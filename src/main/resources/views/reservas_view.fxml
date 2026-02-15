@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="es.cifpcarlos3.reservavideojuegos.controlador.ReservaController"
+            prefWidth="1280" prefHeight="720"
+            styleClass="root">
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <center>
+        <VBox spacing="20">
+            <!-- ENCABEZADO -->
+            <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20">
+                <Label text="Gestión de Reservas" styleClass="label-titulo"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="cmbFiltroEstado" onAction="#onFiltroEstadoChanged"/>
+                <Label fx:id="lblTotalReservas" style="-fx-text-fill: #888;"/>
+            </HBox>
+
+            <!-- TABLA DE RESERVAS -->
+            <TableView fx:id="tablaReservas" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colJuego" text="Videojuego" prefWidth="250"/>
+                    <TableColumn fx:id="colUsuario" text="Usuario" prefWidth="180"/>
+                    <TableColumn fx:id="colFecha" text="Fecha Reserva" prefWidth="160"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="120"/>
+                    <TableColumn fx:id="colPrecio" text="Precio Total" prefWidth="120"/>
+                </columns>
+                <padding><Insets topRightBottomLeft="10"/></padding>
+            </TableView>
+
+            <!-- BARRA DE ACCIONES -->
+            <HBox spacing="15" alignment="CENTER_RIGHT">
+                <padding><Insets left="25" right="25" bottom="20"/></padding>
+                <Button fx:id="btnConfirmar" text="✅ Confirmar" styleClass="boton-primario"
+                        onAction="#onConfirmarReserva" disable="true"/>
+                <Button fx:id="btnMarcarRecogida" text="📦 Marcar Recogida" styleClass="boton-secundario"
+                        onAction="#onMarcarRecogida" disable="true"/>
+                <Button fx:id="btnCancelar" text="❌ Cancelar" styleClass="boton-secundario"
+                        onAction="#onCancelarReserva" disable="true"
+                        style="-fx-background-color: #E94560;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

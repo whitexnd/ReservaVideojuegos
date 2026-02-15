@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="es.cifpcarlos3.reservavideojuegos.controlador.CatalogoController"
+            prefWidth="1280" prefHeight="720"
+            styleClass="root">
+
+    <!-- BARRA LATERAL -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="220" spacing="8">
+            <Label text="🎮 GameReserve" styleClass="label-titulo"/>
+            <Region prefHeight="20"/>
+            <Button text="📋 Catálogo" styleClass="boton-nav"/>
+            <Button text="📦 Mis Reservas" styleClass="boton-nav"/>
+            <Button text="👤 Mi Perfil" styleClass="boton-nav"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="⚙ Configuración" styleClass="boton-nav"/>
+            <Button text="🚪 Cerrar Sesión" styleClass="boton-nav"/>
+        </VBox>
+    </left>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <center>
+        <VBox spacing="20">
+            <!-- ENCABEZADO -->
+            <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20">
+                <Label text="Catálogo de Videojuegos" styleClass="label-titulo"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="txtBuscar" promptText="🔍 Buscar juego..." prefWidth="300"/>
+                <Button text="Buscar" styleClass="boton-primario" onAction="#onBuscar"/>
+            </HBox>
+
+            <!-- FILTROS -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <padding><Insets left="25" right="25"/></padding>
+                <Label text="Filtrar:" style="-fx-text-fill: #888;"/>
+                <ComboBox fx:id="cmbGenero" onAction="#onFiltroChanged"/>
+                <ComboBox fx:id="cmbPlataforma" onAction="#onFiltroChanged"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Ordenar:"/>
+                <ComboBox fx:id="cmbOrdenar"/>
+                <Label fx:id="lblResultados" style="-fx-text-fill: #888;"/>
+            </HBox>
+
+            <!-- GRID DE VIDEOJUEGOS -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                        style="-fx-background-color: transparent;">
+                <GridPane fx:id="gridCatalogo" hgap="20" vgap="20">
+                    <padding><Insets topRightBottomLeft="25"/></padding>
+                </GridPane>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

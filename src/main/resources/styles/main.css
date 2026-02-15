@@ -1,0 +1,242 @@
+/* ============================================================
+   Reserva de Videojuegos - Hoja de Estilos Principal
+   Autor: Oscar
+   Versión: 1.0.0
+   ============================================================ */
+
+/* === VARIABLES DE COLOR (Paleta) === */
+/* Primario:    #1A1A2E (Azul Oscuro)
+   Secundario:  #16213E (Azul Marino)
+   Acento:      #0F3460 (Azul Medio)
+   Highlight:   #E94560 (Rojo/Rosa Gaming)
+   Texto:       #EAEAEA (Gris Claro)
+   Fondo:       #0F0F1A (Casi Negro)
+*/
+
+/* === ROOT / BASE === */
+.root {
+    -fx-background-color: #0F0F1A;
+    -fx-font-family: "Segoe UI", "Roboto", sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #EAEAEA;
+}
+
+/* === BARRA LATERAL (SIDEBAR) === */
+.sidebar {
+    -fx-background-color: #1A1A2E;
+    -fx-padding: 20px 15px;
+    -fx-spacing: 10px;
+}
+
+.sidebar .label-titulo {
+    -fx-text-fill: #E94560;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.sidebar .boton-nav {
+    -fx-background-color: transparent;
+    -fx-text-fill: #EAEAEA;
+    -fx-font-size: 15px;
+    -fx-padding: 12px 20px;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-alignment: CENTER-LEFT;
+    -fx-pref-width: 200px;
+}
+
+.sidebar .boton-nav:hover {
+    -fx-background-color: #16213E;
+}
+
+.sidebar .boton-nav:pressed,
+.sidebar .boton-nav.active {
+    -fx-background-color: #0F3460;
+    -fx-text-fill: #E94560;
+}
+
+/* === ENCABEZADO === */
+.header {
+    -fx-background-color: #1A1A2E;
+    -fx-padding: 15px 25px;
+    -fx-border-color: #16213E;
+    -fx-border-width: 0 0 1 0;
+}
+
+.header .label-titulo {
+    -fx-text-fill: #EAEAEA;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* === TARJETAS DE VIDEOJUEGOS === */
+.card-juego {
+    -fx-background-color: #1A1A2E;
+    -fx-background-radius: 12px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.card-juego:hover {
+    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.3), 12, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.card-juego .label-titulo {
+    -fx-text-fill: #EAEAEA;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 12px 2px 12px;
+}
+
+.card-juego .label-genero {
+    -fx-text-fill: #888;
+    -fx-font-size: 12px;
+    -fx-padding: 0 12px;
+}
+
+.card-juego .label-precio {
+    -fx-text-fill: #E94560;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 12px;
+}
+
+/* === BOTONES === */
+.boton-primario {
+    -fx-background-color: #E94560;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 24px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.boton-primario:hover {
+    -fx-background-color: #D63851;
+}
+
+.boton-primario:pressed {
+    -fx-background-color: #C12B44;
+}
+
+.boton-primario:disabled {
+    -fx-background-color: #555;
+    -fx-text-fill: #999;
+}
+
+.boton-secundario {
+    -fx-background-color: #0F3460;
+    -fx-text-fill: #EAEAEA;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 24px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.boton-secundario:hover {
+    -fx-background-color: #164B8A;
+}
+
+/* === CAMPOS DE TEXTO === */
+.text-field, .password-field {
+    -fx-background-color: #16213E;
+    -fx-text-fill: #EAEAEA;
+    -fx-prompt-text-fill: #666;
+    -fx-border-color: #0F3460;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 14px;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #E94560;
+    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.2), 6, 0, 0, 0);
+}
+
+/* === COMBO BOX === */
+.combo-box {
+    -fx-background-color: #16213E;
+    -fx-border-color: #0F3460;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+/* === TABLA === */
+.table-view {
+    -fx-background-color: #0F0F1A;
+    -fx-border-color: #1A1A2E;
+}
+
+.table-view .column-header {
+    -fx-background-color: #1A1A2E;
+    -fx-text-fill: #E94560;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: #0F0F1A;
+    -fx-text-fill: #EAEAEA;
+    -fx-border-color: #1A1A2E;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #16213E;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #1A1A2E;
+}
+
+/* === SCROLL BAR === */
+.scroll-bar .thumb {
+    -fx-background-color: #0F3460;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #1A1A2E;
+}
+
+/* === ETIQUETAS DE ESTADO === */
+.estado-pendiente {
+    -fx-background-color: #FFA500;
+    -fx-text-fill: black;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.estado-confirmada {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.estado-cancelada {
+    -fx-background-color: #E94560;
+    -fx-text-fill: white;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.estado-recogida {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
